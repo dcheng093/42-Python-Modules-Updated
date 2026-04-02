@@ -30,7 +30,7 @@ class SecurePlant:
             print(f"{self.__name}: Error, age can't be negative\n"
                   "Age update rejected")
 
-    def display(self):
+    def show(self):
         print(
             f"\nCurrent state: {self.__name}: "
             f"{float(self.__height)}cm, {self.__age} days")
@@ -43,4 +43,4 @@ if __name__ == "__main__":
     plant.set_age(30)
     plant.set_height(-10000000000)
     plant.set_age(-10000000000)
-    plant.display()
+    plant.show()
