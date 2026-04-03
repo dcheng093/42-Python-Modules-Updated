@@ -12,20 +12,23 @@ def score_analytics():
             try:
                 score = int(sys.argv[i])
                 scores = scores + [score]
-            except ValueError as e:
-                print(e)
+            except ValueError:
+                print(f"Invalid parameter: '{sys.argv[i]}'")
             i += 1
-        if scores:
-            print(f"Scores processed: {scores}")
-            print(f"Total players: {len(sys.argv) - 1}")
-            print(f"Total score: {sum(scores)}")
-            print(f"Average score: {sum(scores) / (len(sys.argv) - 1)}")
-            print(f"High score: {max(scores)}")
-            print(f"Low score: {min(scores)}")
-            print(f"Score range: {max(scores) - min(scores)}\n")
+        if not scores:
+            print("No scores provided. Usage: python3 ft_score_analytics.py "
+                  "<score1> <score2> ...\n")
+            return
+        print(f"Scores processed: {scores}")
+        print(f"Total players: {len(sys.argv) - 1}")
+        print(f"Total score: {sum(scores)}")
+        print(f"Average score: {sum(scores) / (len(sys.argv) - 1)}")
+        print(f"High score: {max(scores)}")
+        print(f"Low score: {min(scores)}")
+        print(f"Score range: {max(scores) - min(scores)}\n")
     else:
         print("No scores provided. Usage: python3 ft_score_analytics.py "
-              "<score1> <score2> ...")
+              "<score1> <score2> ...\n")
 
 
 if __name__ == "__main__":

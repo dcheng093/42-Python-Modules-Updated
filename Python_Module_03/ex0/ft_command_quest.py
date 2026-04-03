@@ -12,8 +12,8 @@ def command_interpreter():
             i += 1
         print(f"Total arguments {len(sys.argv)}\n")
     else:
-        print("No arguments provided!")
         print(f"Program name: {sys.argv[0]}")
+        print("No arguments provided!")
         print(f"Total arguments: {len(sys.argv)}\n")
 
 
