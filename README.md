@@ -1,7 +1,9 @@
 *This project has been created as part of the 42 curriculum by dcheng.*
 # Python Module Overview
 
-Welcome to your Python learning journey! This repository collects exercises from the Python Modules from 00 to 05, each module builds on the previous, gradually increasing complexity while teaching practical programming skills. It also teaches you how to endure psychological torture, so... Just a normal 42 project.
+Welcome to your Python learning journey! This repository collects exercises from the Python Modules from 00 to 10, each module builds on the previous, gradually increasing complexity while teaching practical programming skills. It also teaches you how to endure psychological torture, so... Just a normal 42 project.
+
+Keep in mind, this README.md was written in early January 2026, a lot of the exercises have changed and therefore the contents and examples I will be providing will be slightly outdated.
 
 <p align="center">
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW1kdjZwM2h2YXQzZHQ2NGZ1ZDl5aDRncms4d2Rla2UzdHF1dGFrZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/O8dCwBMsKWwtfrcgQs/giphy.gif" alt="cute gif" width="300"/>
