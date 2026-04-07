@@ -26,7 +26,7 @@ if __name__ == "__main__":
     }
     for name, ach in players.items():
         print(f"Player {name}: {ach}")
-    all_achievements = set()
+    all_achievements: set = set()
     for ach in players.values():
         all_achievements = all_achievements.union(ach)
     print(f"\nAll distinct achievements: {all_achievements}\n")
@@ -38,7 +38,7 @@ if __name__ == "__main__":
             common = common.intersection(ach)
     print(f"Common achievements: {common}\n")
     for name, ach in players.items():
-        others = set()
+        others: set = set()
         for other_name, other_ach in players.items():
             if other_name != name:
                 others = others.union(other_ach)

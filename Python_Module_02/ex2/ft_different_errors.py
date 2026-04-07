@@ -8,7 +8,7 @@ def garden_operations(operation_number: int) -> int:
     elif operation_number == 3:
         "hello" + 5
     else:
-        return
+        return (0)
 
 
 def test_error_types():

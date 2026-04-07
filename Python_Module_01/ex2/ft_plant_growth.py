@@ -2,12 +2,12 @@
 
 
 class Plant:
-    def __init__(self, name: str, height: int, age: int) -> None:
+    def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name.capitalize()
         self.height = height
         self.age = age
 
-    def grow(self, cm: int) -> None:
+    def grow(self, cm: float) -> None:
         self.height += cm
 
     def age_by(self, days: int) -> None:
@@ -19,7 +19,7 @@ class Plant:
 
 if __name__ == "__main__":
     plant1 = Plant("Rose", 24.2, 29)
-    start_height: int = plant1.height
+    start_height: float = plant1.height
     print("=== Garden Plant Growth ===")
     for day in range(1, 8):
         print(f"=== Day {day} ====")

@@ -58,7 +58,7 @@ class Vegetable(Plant):
                  height: int,
                  age: int,
                  harvest_season: str,
-                 nutritional_value: str):
+                 nutritional_value: int):
         super().__init__(name, height, age)
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value

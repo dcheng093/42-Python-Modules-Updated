@@ -9,9 +9,10 @@ def input_temperature(temp_str: str) -> int:
             print(f"Error: {num}°C is too hot for plants (max 40°C)\n")
         else:
             print(f"Temperature is now {num}°C\n")
-        return num
+        return (num)
     except ValueError as e:
         print(f"Caught input_temperature error: {e}\n")
+        return (0)
 
 
 def test_temperature() -> None:
