@@ -3,7 +3,7 @@ from datetime import datetime
 from enum import Enum
 
 
-class ContactType(Enum):
+class ContactType(str, Enum):
     radio = "radio"
     visual = "visual"
     physical = "physical"
@@ -22,7 +22,7 @@ class AlienContact(BaseModel):
     is_verified: bool = Field(default=False)
 
     @model_validator(mode='after')
-    def validate_info(self):
+    def validate_info(self) -> "AlienContact":
         contact_id = self.contact_id
         contact_type = self.contact_type
         signal = self.signal_strength

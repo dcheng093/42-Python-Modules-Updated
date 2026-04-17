@@ -35,7 +35,7 @@ class SpaceMission(BaseModel):
     def validate_info(self):
         mission_id = self.mission_id
         if not mission_id.startswith("M"):
-            raise ValueError("Mission ID must start with M (Midget)")
+            raise ValueError("Mission ID must start with M")
         has_leader = any(member.rank in {Rank.commander, Rank.captain}
                          for member in self.crew)
         if not has_leader:
@@ -48,7 +48,7 @@ class SpaceMission(BaseModel):
         percent_exp = experienced_mems / nums_mems
         if self.duration_days > 365 and percent_exp < 0.5:
             raise ValueError(
-                "Long misions require at least 50% experienced crew"
+                "Long missions require at least 50% experienced crew"
             )
         for member in self.crew:
             if member.is_active is False:

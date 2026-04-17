@@ -4,6 +4,7 @@ REQUIRED_PACKAGES = ["pandas", "numpy", "requests", "matplotlib"]
 
 DISPLAY_MESSAGES = {
     "pandas": "Data manipulation ready",
+    "numpy": "Numerical computation ready",
     "requests": "Network access ready",
     "matplotlib": "Visualization ready",
 }
@@ -48,7 +49,7 @@ def run_analysis():
     plt.ylabel("Signal Value")
     plt.savefig("matrix_analysis.png")
     print("\nAnalysis complete!")
-    print("Results saved to: matrix\\_analysis.png}")
+    print("Results saved to: matrix_analysis.png")
 
 
 if __name__ == "__main__":
