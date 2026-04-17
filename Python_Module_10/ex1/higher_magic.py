@@ -1,18 +1,22 @@
-def spell_combiner(spell1: callable, spell2: callable) -> callable:
+from typing import Callable
+
+
+def spell_combiner(spell1: Callable, spell2: Callable) -> Callable:
     def combined(*args, **kwargs) -> tuple:
-        return (spell1(*args, **kwargs),
-                spell2(*args, **kwargs)
-                )
+        return (
+            spell1(*args, **kwargs),
+            spell2(*args, **kwargs),
+        )
     return combined
 
 
-def power_amplifier(base_spell: callable, multiplier: int) -> callable:
-    def amplified(*args, **kwargs) -> int:
-        return base_spell(*args, **kwargs) * multiplier
+def power_amplifier(base_spell: Callable, multiplier: int) -> Callable:
+    def amplified(target: str, power: int) -> str:
+        return base_spell(target, power * multiplier)
     return amplified
 
 
-def conditional_caster(condition: callable, spell: callable) -> callable:
+def conditional_caster(condition: Callable, spell: Callable) -> Callable:
     def cast(*args, **kwargs):
         if condition(*args, **kwargs):
             return spell(*args, **kwargs)
@@ -20,34 +24,28 @@ def conditional_caster(condition: callable, spell: callable) -> callable:
     return cast
 
 
-def spell_sequence(spells: list[callable]) -> callable:
-    def sequence(*args, **kwargs):
-        results = []
-        for spell in spells:
-            results.append(spell(*args, **kwargs))
-        return results
+def spell_sequence(spells: list[Callable]) -> Callable:
+    def sequence(*args, **kwargs) -> list:
+        return [spell(*args, **kwargs) for spell in spells]
     return sequence
 
 
 if __name__ == "__main__":
-    def fireball(target):
+
+    def fireball(target: str, power: int) -> str:
         return f"Fireball hits {target}"
 
-    def heal(target):
+    def heal(target: str, power: int) -> str:
         return f"Heals {target}"
 
-    def lightning(target):
-        return f"Lightning strikes {target}"
-
-    def is_alive(target):
-        return target != "ghost"
-    print("\nTesting spell_combiner...")
+    print("\nTesting spell combiner...")
     combined = spell_combiner(fireball, heal)
-    result1, result2 = combined("Dragon")
+    result1, result2 = combined("Dragon", 10)
     print(f"Combined spell result: {result1}, {result2}")
-    print("\nTesting power_amplifier...")
+    print("\nTesting power amplifier...")
 
-    def simple_fireball():
-        return 10
+    def simple_fireball(target: str, power: int) -> int:
+        return power
+
     mega_fireball = power_amplifier(simple_fireball, 3)
-    print(f"Original: {simple_fireball()}, Amplified: {mega_fireball()}")
+    print(f"Original: 10, Amplified: {mega_fireball('Dragon', 10)}")
