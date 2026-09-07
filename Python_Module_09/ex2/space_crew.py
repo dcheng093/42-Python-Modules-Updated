@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field, model_validator, ValidationError
 from datetime import datetime
 
 
-class Rank(Enum):
+class Rank(str, Enum):
     cadet = "cadet"
     officer = "officer"
     lieutenant = "lieutenant"

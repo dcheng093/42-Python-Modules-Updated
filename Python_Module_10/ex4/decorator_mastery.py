@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
     @spell_timer
     def fireball():
-        time.sleep(0.098)
+        time.sleep(0.0989)
         return "Fireball cast!"
 
     result = fireball()
