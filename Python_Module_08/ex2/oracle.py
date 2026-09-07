@@ -16,7 +16,11 @@ def load_configuration():
 
 def display_status(config):
     print("\nORACLE STATUS: Reading the Matrix...\n")
-    print("Configuration loaded:")
+    missing = [k for k, v in config.items() if not v]
+    if missing:
+        print("Configuration incomplete:")
+    else:
+        print("Configuration loaded:")
     mode = config["MATRIX_MODE"] or "undefined"
     print(f"Mode: {mode}")
     if mode == "development":
